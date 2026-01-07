@@ -1,0 +1,166 @@
+/* --- Barra de Navegação --- */
+.Navbar {
+  display: flex;
+  justify-content: center; /* Mantém os links centralizados */
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.Navbar-logo {
+  display: none;
+}
+
+.Navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.Navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  /* Removemos o margin-right que separava do botão */
+}
+
+.Navbar-links li {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem; /* Adiciona espaço entre os links */
+}
+
+.Navbar-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  
+  /* --- MUDANÇA: Animação de Hover --- */
+  display: inline-block; /* Necessário para o transform */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Navbar-links a:hover {
+  color: var(--color-primary);
+  
+  /* --- MUDANÇA: Animação sutil (move 3px para cima) --- */
+  transform: translateY(-3px);
+}
+
+/* REMOVEMOS OS ESTILOS .Navbar-cta-button E .Navbar-cta-button:hover 
+*/
+
+
+/* --- Estilos das Seções (Sem Mudanças) --- */
+.Section {
+  padding: 80px 5%;
+  text-align: center;
+}
+.Section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+.Section p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+}
+.Section ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+.Section li {
+  margin-bottom: 0.5rem;
+}
+.Section-gray {
+  background-color: #f9f9f9;
+}
+
+
+/* --- Estilo do Hero Section --- */
+.Hero {
+  height: 90vh; 
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+}
+.Hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+.Hero-content {
+  position: relative; 
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Ajuste no padding para a logo não ficar em cima do texto */
+  padding-top: 50px; 
+}
+.Hero-content h1 {
+  font-size: 3.5rem; 
+  margin: 0;
+  font-family: 'Playfair Display', serif; 
+}
+.Hero-content p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+
+/* --- ESTILOS DA LOGO (MOVIDA PARA O CANTO) --- */
+.Hero-logo-container {
+  position: absolute;
+  
+  /* --- MUDANÇA: Posição no Canto Superior Esquerdo --- */
+  top: -5px; 
+  left: 100px;
+  
+  /* --- MUDANÇA: Remove o transform de centralização --- */
+  transform: none; 
+  
+  transition: transform 0.5s ease-in-out;
+  
+  /* --- MUDANÇA: Nova animação para o canto --- */
+  animation: pulse-corner 3s infinite ease-in-out; 
+}
+
+.Hero-logo-container:hover {
+  /* --- MUDANÇA: Simplifica o hover --- */
+  transform: scale(1.05); 
+}
+
+.Hero-logo {
+  /* --- MUDANÇA: Logo menor para caber no canto --- */
+  width: 180px; 
+  height: auto; 
+  object-fit: contain; 
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5)); 
+}
+
+
+/* --- MUDANÇA: Animação ajustada para o canto --- */
+@keyframes pulse-corner {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+
